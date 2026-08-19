@@ -48,6 +48,6 @@ GROUP BY EXTRACT(MONTH FROM fecha_venta);
 -- ══════════════════════════════════════════
 -- HALLAZGOS
 -- ══════════════════════════════════════════
--- 1. El mes de marzo concentra la mayor cantidad de pedidos (7 de 10).
+-- 1. El mes de enero concentra la mayor cantidad de pedidos (7 de 10).
 -- 2. El producto 1 (Laptop Pro 15) es el de mayor facturación, explicado por su alto precio unitario (1200) y su aparición en múltiples pedidos.
 -- 3. Los clientes 1, 4 y 5 son los únicos recurrentes del período, esto indica que la mayoría de los clientes realizó una sola compra.
