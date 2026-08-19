@@ -48,6 +48,6 @@ GROUP BY EXTRACT(MONTH FROM fecha_venta);
 -- ══════════════════════════════════════════
 -- HALLAZGOS
 -- ══════════════════════════════════════════
--- 1. El mes de enero concentra la mayor cantidad de pedidos (7 de 10).
--- 2. El producto 1 (Laptop Pro 15) es el de mayor facturación, explicado por su alto precio unitario (1200) y su aparición en múltiples pedidos.
--- 3. Los clientes 1, 4 y 5 son los únicos recurrentes del período, esto indica que la mayoría de los clientes realizó una sola compra.
+-- 1. El único mes con ventas registradas es marzo, concentrando el 100% de la facturación total (6444) en 10 pedidos con un ticket promedio de 644.4
+-- 2. El producto 1 (Laptop Pro 15) lidera la facturación con 3600, representando el 55% del total facturado del período.
+-- 3. Los 5 clientes del dataset son todos recurrentes (2 pedidos cada uno), siendo el cliente 1 el de mayor gasto total con 2640.
