@@ -34,15 +34,20 @@ WHERE v.id_producto IS NULL;
 
 -- CONSULTA 4: Consolidado por canal (UNION ALL)
 SELECT
-    v.fecha_venta,
-    v.cantidad * v.precio_unitario AS total_venta,
-    'Premium' AS canal
-FROM ventas v
-WHERE v.precio_unitario > 500
-UNION ALL
-SELECT
-    v.fecha_venta,
-    v.cantidad * v.precio_unitario AS total_venta,
-    'Estándar' AS canal
-FROM ventas v
-WHERE v.precio_unitario <= 500;
+    canal,
+    SUM(total_venta) AS total_facturado,
+    COUNT(*) AS cantidad_ventas
+FROM (
+    SELECT
+        v.cantidad * v.precio_unitario AS total_venta,
+        'Premium' AS canal
+    FROM ventas v
+    WHERE v.precio_unitario > 500
+    UNION ALL
+    SELECT
+        v.cantidad * v.precio_unitario AS total_venta,
+        'Estándar' AS canal
+    FROM ventas v
+    WHERE v.precio_unitario <= 500
+) consolidado
+GROUP BY canal;
